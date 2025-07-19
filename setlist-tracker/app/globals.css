@@ -1,0 +1,227 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Dead & Company Brand Colors */
+.bg-dead-cream {
+  background-color: #f5f0e8;
+}
+.bg-dead-purple {
+  background-color: #8b5fbf;
+}
+.bg-dead-yellow {
+  background-color: #ffd700;
+}
+.text-dead-purple {
+  color: #8b5fbf;
+}
+
+/* Dead & Company Logo Style */
+.dead-logo {
+  background: linear-gradient(135deg, #ff6b9d 0%, #ff8e8e 50%, #ffa8a8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+  font-weight: 900;
+  font-family: "Arial Black", Arial, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* Retro Button Styles */
+.btn-yellow {
+  background-color: #ffd700 !important;
+  color: #000 !important;
+  font-weight: bold;
+  border: 2px solid #000 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.2s ease;
+}
+
+.btn-yellow:hover {
+  background-color: #ffed4e !important;
+  color: #000 !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-yellow:focus {
+  background-color: #ffed4e !important;
+  color: #000 !important;
+}
+
+.btn-yellow:active {
+  background-color: #e6c200 !important;
+  color: #000 !important;
+}
+
+/* Card Styles */
+.dead-card {
+  background: white;
+  border: 2px solid #000;
+  box-shadow: 4px 4px 0px #000;
+}
+
+.dead-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 6px 6px 0px #000;
+}
+
+/* Typography */
+.font-dead {
+  font-family: "Arial Black", Arial, sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+}
+
+.font-dead-body {
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+}
+
+/* Header Banner */
+.purple-banner {
+  background: linear-gradient(135deg, #8b5fbf 0%, #a855f7 100%);
+  color: white;
+  text-align: center;
+  padding: 8px 0;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 14px;
+}
+
+/* Game specific styles */
+.bingo-cell {
+  aspect-ratio: 1;
+  border: 2px dashed #8b5fbf;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: all 0.3s ease;
+  min-height: 80px;
+}
+
+.bingo-cell:hover {
+  border-color: #a855f7;
+  background: #f3f4f6;
+}
+
+.bingo-cell.filled {
+  border: 2px solid #ffd700;
+  background: #fffbeb;
+}
+
+.bingo-cell.drag-over {
+  border: 2px solid #8b5fbf;
+  background: linear-gradient(135deg, #f3e8ff 0%, #fdf4ff 100%);
+  transform: scale(1.05);
+}
+
+.song-card {
+  background: white;
+  border: 2px solid #8b5fbf;
+  border-radius: 8px;
+  padding: 12px;
+  cursor: grab;
+  transition: all 0.3s ease;
+}
+
+.song-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(139, 95, 191, 0.3);
+}
+
+.song-card:active {
+  cursor: grabbing;
+  transform: rotate(5deg);
+  opacity: 0.8;
+}
+
+.setlist-slot {
+  border: 2px dashed #14b8a6;
+  background: white;
+  border-radius: 8px;
+  padding: 12px;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.3s ease;
+}
+
+.setlist-slot:hover {
+  border-color: #0d9488;
+  background: #f0fdfa;
+}
+
+.setlist-slot.filled {
+  border: 2px solid #ffd700;
+  background: #fffbeb;
+}
+
+.setlist-slot.drag-over {
+  border: 2px solid #14b8a6;
+  background: linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 100%);
+  transform: scale(1.02);
+}
